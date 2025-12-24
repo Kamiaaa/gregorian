@@ -26,7 +26,7 @@ const Footer: React.FC = () => {
                 <div className="relative">
                   <div className="absolute inset-0 bg-gray-600/30 rounded-full blur-sm"></div>
                   <img 
-                    src="/img/logo.png" 
+                    src="/img/logo.jpg" 
                     alt="Gregorian Club Logo"
                     className="h-16 w-auto relative z-10"
                   />
@@ -98,7 +98,7 @@ const Footer: React.FC = () => {
         <div className="space-y-6">
           <h3 className="text-gray-100 text-xl font-bold mb-2 relative inline-block drop-shadow font-poppins">
             Contact Us
-            <span className="absolute -bottom-1 left-0 w-1/2 h-0.5 bg-gradient-to-r from-gray-400 to-transparent"></span>
+            <span className="absolute -bottom-1 left-0 w-1/2 h-0.5 bg-linear-to-r from-gray-400 to-transparent"></span>
           </h3>
           
           <div className="space-y-4">

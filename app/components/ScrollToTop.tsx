@@ -37,12 +37,12 @@ const ScrollToTop = () => {
           className="
             fixed bottom-8 right-8 z-50
             w-14 h-14 rounded-full
-            bg-linear-to-r from-lime-500 to-green-600
-            hover:from-lime-600 hover:to-green-700
+            bg-linear-to-r from-[#231B67] to-[#6b5dec]
+            hover:from-[#231B67] hover:to-[#6b5dec]
             text-white
             transition-all duration-300
             transform hover:scale-110
-            focus:outline-none focus:ring-4 focus:ring-green-300
+            focus:outline-none focus:ring-4 focus:ring-blue-500
             group
             flex items-center justify-center
           "

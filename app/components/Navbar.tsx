@@ -107,12 +107,12 @@ const Navbar = () => {
   };
 
   return (
-    <header className="bg-lime-600 opacity-80 dark:bg-gray-900 shadow-md fixed top-0 h-24 w-full z-50">
+    <header className="bg-blue-950 opacity-80 dark:bg-gray-900 shadow-md fixed top-0 h-24 w-full z-50">
       <div className="max-w-7xl mx-auto px-4 flex justify-between items-center">
         <Link href="/" className="text-2xl font-bold text-gray-900 dark:text-white">
           <Image
             className="h-24 w-auto"
-            src="/img/logo.png"
+            src="/img/logo.jpg"
             alt="Logo"
             height={300}
             width={300}

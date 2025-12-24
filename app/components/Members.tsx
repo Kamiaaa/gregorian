@@ -65,8 +65,8 @@ const ExecutiveMembersSection: React.FC<ExecutiveMembersSectionProps> = ({
                         {description}
                     </p> */}
                     <div className="relative inline-block">
-                        <div className="w-24 h-1 bg-lime-700 dark:bg-lime-300 rounded-full mb-1 mx-auto"></div>
-                        <div className="w-16 h-1 bg-lime-700 dark:bg-lime-300 rounded-full mx-auto"></div>
+                        <div className="w-24 h-1 bg-[#231B67] dark:bg-[#362b99] rounded-full mb-1 mx-auto"></div>
+                        <div className="w-16 h-1 bg-[#231B67] dark:bg-[#362b99] rounded-full mx-auto"></div>
                     </div>
                 </div>
 
@@ -81,7 +81,7 @@ const ExecutiveMembersSection: React.FC<ExecutiveMembersSectionProps> = ({
                 <div className="text-center mt-12">
                     <a
                         href={ctaLink}
-                        className="inline-block bg-linear-to-r from-lime-700 to-lime-800 hover:from-lime-600 hover:to-lime-700 text-white font-semibold px-6 py-3 rounded-lg shadow-md hover:bg-tab-teal dark:hover:from-lime-600 dark:hover:to-lime-700 transition-all duration-300 transform hover:-translate-y-1"
+                        className="inline-block bg-linear-to-r from-[#231B67] to-[#362b99] hover:from-[#231B67] hover:to-[#362b99] text-white font-semibold px-6 py-3 rounded-lg shadow-md hover:bg-tab-teal dark:hover:from-[#362b99] dark:hover:to-[#362b99] transition-all duration-300 transform hover:-translate-y-1"
                     >
                         {ctaText}
                     </a>
@@ -97,35 +97,42 @@ interface MemberCardProps {
 
 const MemberCard: React.FC<MemberCardProps> = ({ member }) => {
     return (
-        <div className="relative overflow-hidden group bg-white dark:bg-gray-800 rounded-xl shadow-lg dark:shadow-gray-800/30 transition-all duration-300 hover:scale-105 hover:shadow-xl dark:hover:shadow-gray-800/50">
-            {/* Image container */}
-            <div className="relative w-full h-80 bg-gray-200 dark:bg-gray-700 rounded-t-xl overflow-hidden">
+        <div className="group relative bg-white dark:bg-gray-800 rounded-xl p-4 w-full shadow-2xl transition-all duration-500 hover:-translate-y-2">
+            {/* Border animation container */}
+            <div className="absolute inset-0 overflow-hidden rounded-xl pointer-events-none">
+                <div className="absolute inset-0 bg-linear-to-br from-[#231B67] to-[#362b99] opacity-0 group-hover:opacity-10 transition-opacity duration-500"></div>
+                <div className="absolute top-0 left-0 w-full h-0.5 bg-[#231B67] scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-500"></div>
+                <div className="absolute top-0 right-0 w-0.5 h-full bg-[#231B67] scale-y-0 group-hover:scale-y-100 origin-top transition-transform duration-500 delay-100"></div>
+                <div className="absolute bottom-0 right-0 w-full h-0.5 bg-[#231B67] scale-x-0 group-hover:scale-x-100 origin-right transition-transform duration-500 delay-200"></div>
+                <div className="absolute bottom-0 left-0 w-0.5 h-full bg-[#231B67] scale-y-0 group-hover:scale-y-100 origin-bottom transition-transform duration-500 delay-300"></div>
+            </div>
+
+            {/* Image container - Adjusted for new layout */}
+            <div className="relative w-full h-64 bg-gray-200 dark:bg-gray-700 rounded-xl overflow-hidden mb-6">
                 <Image
                     src={member.imageUrl}
                     alt={member.alt}
                     fill
                     className="object-cover object-center"
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                    priority={member.id <= 2} // Only prioritize first 2 images
+                    priority={member.id <= 2}
                 />
                 {/* Gradient overlay */}
-                <div className="absolute inset-0 bg-linear-to-t from-black/60 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             </div>
 
-            {/* Name and Role */}
-            <div className="p-4">
+            {/* Name and Role - Adjusted padding removed since container has p-8 */}
+            <div className="relative z-10">
                 <h3 className="font-playfair text-xl font-semibold mb-2 text-gray-900 dark:text-white transition-colors duration-300">
                     {member.name}
                 </h3>
-                <p className="text-tab-gray dark:text-gray-400 mb-4 transition-colors duration-300">
+                <p className="text-tab-gray dark:text-gray-400 transition-colors duration-300">
                     {member.role}
                 </p>
             </div>
 
-            {/* Optional: Bio slide-up on hover */}
-            <div className="absolute bottom-0 left-0 right-0 bg-white dark:bg-gray-800 p-4 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-in-out shadow-lg rounded-t-lg">
-                {/* Add bio content here if needed */}
-            </div>
+            {/* Optional: Bio slide-up on hover - Removed as it conflicts with new design */}
+            {/* You can add this back if needed, but adjust positioning accordingly */}
         </div>
     );
 };
